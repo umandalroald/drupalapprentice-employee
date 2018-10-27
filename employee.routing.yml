@@ -6,7 +6,7 @@ employee.content:
   requirements:
     _permission: 'access content'
 employee.employee_form:
-  path: 'employee-form/manage/{pid}'
+  path: 'employee-form/manage'
   defaults:
     _form: '\Drupal\employee\Form\EmployeeForm'
     _title: 'Manage Employee'
