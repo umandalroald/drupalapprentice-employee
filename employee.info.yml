@@ -1,0 +1,5 @@
+name: Employee
+type: module
+description: 'Employee Database Management'
+package: 'Drupal Apprentice'
+core: 8.x

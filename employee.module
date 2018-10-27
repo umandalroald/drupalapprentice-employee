@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implement hook_theme().
+ */
+function employee_theme($existing, $type, $theme, $path) {
+  return [
+    'employee_template' => [
+      'variables' => [
+        'header' => [],
+        'rows' => [],
+      ],
+    ],
+  ];
+}

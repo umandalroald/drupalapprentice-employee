@@ -1,0 +1,19 @@
+<a href="/employee-form/manage">Add new record</a>
+<table style="width:100%">
+  <thead>
+    <tr>
+        {% for comlum_name in header %}
+        <th>{{ comlum_name }}</th>
+        {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+        {% for sub_array in rows %}
+            <tr>
+            {% for value in sub_array %}
+                <td>{{ value }}</th>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

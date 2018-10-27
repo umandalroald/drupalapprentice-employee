@@ -1,0 +1,14 @@
+employee.content:
+  path: '/employee'
+  defaults:
+    _controller: '\Drupal\employee\Controller\EmployeeController::employee'
+    _title: 'Employee Record'
+  requirements:
+    _permission: 'access content'
+employee.employee_form:
+  path: 'employee-form/manage/{pid}'
+  defaults:
+    _form: '\Drupal\employee\Form\EmployeeForm'
+    _title: 'Manage Employee'
+  requirements:
+    _permission: 'access content'
