@@ -28,10 +28,10 @@ class EmployeeController extends ControllerBase {
           ->fields('f', ['pid', 'firstname', 'lastname', 'age']);
         $results = $query->execute();
     
-        $options = array(
-          'attributes' => ['class' => ['link']],
-          'absolute'   => TRUE,
-        );
+        // $options = array(
+        //   'attributes' => ['class' => ['link']],
+        //   'absolute'   => TRUE,
+        // );
 
         foreach($results->fetchAll() as $item) {
           $employee[] = array(
@@ -45,7 +45,7 @@ class EmployeeController extends ControllerBase {
         // $employee = [
         //     [
         //         'firstname' => 'Roald',
-        //         'lastname' => 'Umandal',
+        //         'lastname' => 'Umandals',
         //         'age' => 26
         //     ],
         //     [
@@ -59,7 +59,7 @@ class EmployeeController extends ControllerBase {
         //         'age' => 7
         //     ]
         // ];
-        // $employee = array();
+
         return [
             '#theme' => 'employee_template',
             '#header' => ['First Name', 'Last Name', 'Age'],

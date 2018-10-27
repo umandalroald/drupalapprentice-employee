@@ -51,7 +51,60 @@ function employee_install() {
  * @ingroup employee
  */
 function employee_schema() {
+
   $schema['employee'] = [
+    'description' => 'Stores example person entries for demonstration purposes.',
+    'fields' => [
+      'pid' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique person ID.',
+      ],
+      'uid' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "Creator user's {users}.uid",
+      ],
+      'firstname' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'First name of the person.',
+      ],
+      'lastname' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Last name of the person.',
+      ],
+      'age' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'size' => 'tiny',
+        'description' => 'The age of the person in years.',
+      ],
+    ],
+    'primary key' => ['pid'],
+    'indexes' => [
+      'firstname' => ['firstname'],
+      'lastname' => ['lastname'],
+      'age' => ['age'],
+    ],
+  ];
+
+  return $schema;
+}
+
+/**
+ * Add new table employeeone
+ */
+function employee_update_8002(&$schema) {
+  
+  $schema['employeeone'] = [
     'description' => 'Stores example person entries for demonstration purposes.',
     'fields' => [
       'pid' => [

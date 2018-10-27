@@ -64,22 +64,23 @@ class EmployeeForm extends FormBase {
      * {@inheritdoc}
      */
     public function submitForm(array &$form, FormStateInterface $form_state) {
+      // Get form values.
       $field = $form_state->getValues();
-
+      // Format $form_state value.
       $employee_information = array(
         'uid' => 0,
         'firstname' => $field['firstname'],
         'lastname' => $field['lastname'],
         'age' => $field['age']
       );
-
+      // Save employe information.
       $query = \Drupal::database();
       $query ->insert('employee')
           ->fields($employee_information)
           ->execute();
 
       drupal_set_message('New employee is successfully created ' . $field['firstname'] . ' ' . $field['lastname']);
-
+      // Redirect to employee page.
       $response = new RedirectResponse("/employee");
       $response->send();
     }
